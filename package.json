@@ -1,0 +1,49 @@
+{
+  "name": "md-sync-scroll",
+  "version": "1.0.1",
+  "description": "让两个HTML元素进行同步滚动的插件",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack && webpack-dev-server --open",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abc1310054026/sync-scroll.git"
+  },
+  "keywords": [
+    "markdown",
+    "async scroll"
+  ],
+  "author": "abc1310054026",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abc1310054026/sync-scroll/issues"
+  },
+  "homepage": "https://github.com/abc1310054026/sync-scroll#readme",
+  "files": [
+    "src/lib",
+    "src/index.js"
+  ],
+  "dependencies": {
+    "@babel/polyfill": "^7.4.3",
+    "core-js": "^3.0.1",
+    "github-markdown-css": "^3.0.1",
+    "highlight.js": "^9.15.6",
+    "markdown-it": "^8.4.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "babel-loader": "^8.0.0-beta.0",
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.3.1"
+  }
+}

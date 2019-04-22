@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sync Scroll Demo</title>
+</head>
+<body>
+<div class="flex flex-col" style="width: 100%;height: 100%;">
+    <div class="heading">
+        <button id="editMarginUp" onclick="editMarginUp()">Edit margin Up</button>
+        <button id="editMarginDown" onclick="editMarginDown()">Edit margin Down</button>
+    </div>
+    <div class="flex content">
+        <div id="edit" class="area">
+            <div class="h1"># Sync Scroll</div>
+            <div>这是一个基于**片段**的同步滚动插件</div>
+            <div class="h2">## 片断</div>
+            <pre><code>
+```markdown
+// 片段start
+# 这表示一个片段的开始
+这些是片段内容
+这些也是片段内容
+// 片段end
+```
+            </code></pre>
+            <div>如果你想要使用它让你的内容能进行同步滚动，你需要让你的内容符合以上的布局。这种布局很多Markdown格式的文本都是天然符合的，不过就是标题-内容-标题-内容...</div>
+            <div><br></div>
+            <div>示例：</div>
+            <pre><code>
+```markdown
+# 文章标题
+标题下的内容...
+# 文章标题2
+标题下的内容2...
+...
+```
+            </code></pre>
+            <div>其实这个页面就是一个很好的例子，当你滚动滚轮或滚动条的时候，注意一下以`#`号开头的段落，就就能看到效果了。</div>
+            <div><br></div>
+            <div class="h1"># Usage</div>
+            <div>SyncScroll正常运行，需要你用一个块级元素包裹你的内容，你可以按`F12`查看此页的代码。</div>
+            <div><br></div>
+            <div>1. 首先引入</div>
+            <pre><code>
+```js
+import {SyncScroll, Area, Fragment} from "./index";
+```
+            </code></pre>
+            <div>2. 设置要进行同步的DOM元素。你需要指定每个`Area`的子元素查询条件。</div>
+            <pre><code>
+```js
+import {SyncScroll, Area, Fragment} from "./index";
+
+const editArea = document.getElementById('edit');
+const previewArea = document.getElementById('preview');
+const syncScroll = new SyncScroll();
+
+// 对于本页面来说，我用`h1-6`指示片段的开始，那么我就要查询被我指定为`h1-h6`的元素
+// 在左边我用class='h1-6'标记，在右边用&lt;h1-6&gt;表示
+syncScroll.addArea(editArea, '.h1,.h2,.h3,.h4,.h5,.h6');
+syncScroll.addArea(previewArea, 'h1,h2,h3,h4,h5,h6');
+```
+            </code></pre>
+            <div class="h1"># API</div>
+            <div class="h2">## SyncScroll</div>
+            <div class="h3">### PROPERTY</div>
+            <div>| Prop name | Type | Default | Description |</div>
+            <div>| --- | --- | --- | --- |</div>
+            <div>| areas | Array&lt;Area&gt; | null | Area的数组 |</div>
+            <div class="h3">### FUNCTION</div>
+            <div>| Func name | Params | Default | Description |</div>
+            <div>| --- | --- | --- | --- |</div>
+            <div>| addArea | el, queryCriteria | null | 添加一个`Area`，指定一个Dom元素el，和子元素查询语句 |</div>
+            <div><br></div>
+            <div class="h1"># 以下仅作为测试数据，用于测试同步滚动的效果。也可以点击上方按钮增大边距，查看效果</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div class="h1"># Aysnc Scroll</div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+            <div><br></div>
+        </div>
+
+        <div id="preview" class="area markdown-body"></div>
+    </div>
+</div>
+<script type="text/javascript" src="main.js"></script></body>
+</html>
