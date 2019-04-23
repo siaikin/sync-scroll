@@ -39,7 +39,19 @@
             <div>其实这个页面就是一个很好的例子，当你滚动滚轮或滚动条的时候，注意一下以`#`号开头的段落，就就能看到效果了。</div>
             <div><br></div>
             <div class="h1"># Usage</div>
-            <div>SyncScroll正常运行，需要你用一个块级元素包裹你的内容，你可以按`F12`查看此页的代码。</div>
+            <div>如果想让SyncScroll正常运行，需要你用一个块级元素包裹你的内容，你可以按`F12`查看此页的代码。</div>
+            <div>我用`&lt;div&gt;`包裹了里面的内容，还有设置`overflow: auto`和`position: reactive`。
+                请务必设置overflow和position，overflow我想不必多说，它决定了是否能进行滚动。
+            </div>
+            <div>
+                对于position，因为我使用`HTMLElement.offsetTop`来获取片段的偏移高度，
+                而`offsetTop`依赖于最近的定位元素。如果你不将包裹的元素设置为定位元素，将无法获取到正确的`offsetTop`。
+            </div>
+            <div><br></div>
+            <div>
+                下面我们进入正题，`md-sync-scroll`的用法很简单，你只需要将要进行同步的元素和查询子元素的查询语句
+                传入`addArea(el, queryCriteria)`方法中就好了。然后如果你改变了其中的内容，请调用`update()`方法以更新内容。
+            </div>
             <div><br></div>
             <div>1. 首先引入</div>
             <pre><code>
@@ -48,6 +60,9 @@ import {SyncScroll, Area, Fragment} from "./index";
 ```
             </code></pre>
             <div>2. 设置要进行同步的DOM元素。你需要指定每个`Area`的子元素查询条件。</div>
+            <div><br></div>
+            <div>在内部我使用`querySelectorAll`来查询子元素。所以你需要传入符合css选择器语法的字符串。
+            </div>
             <pre><code>
 ```js
 import {SyncScroll, Area, Fragment} from "./index";
@@ -57,7 +72,7 @@ const previewArea = document.getElementById('preview');
 const syncScroll = new SyncScroll();
 
 // 对于本页面来说，我用`h1-6`指示片段的开始，那么我就要查询被我指定为`h1-h6`的元素
-// 在左边我用class='h1-6'标记，在右边用&lt;h1-6&gt;表示
+// 在左边我用class='h1-6'标记，在右边用&lt;h1-6&gt&gt;表示
 syncScroll.addArea(editArea, '.h1,.h2,.h3,.h4,.h5,.h6');
 syncScroll.addArea(previewArea, 'h1,h2,h3,h4,h5,h6');
 ```
@@ -267,5 +282,6 @@ syncScroll.addArea(previewArea, 'h1,h2,h3,h4,h5,h6');
         <div id="preview" class="area markdown-body"></div>
     </div>
 </div>
+<script type="text/javascript" src="dist/main.js"></script>
 <script type="text/javascript" src="main.js"></script></body>
 </html>
