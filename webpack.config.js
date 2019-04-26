@@ -12,7 +12,7 @@ module.exports = {
     devServer: {
         contentBase: './dist'
     },
-    devtool: "eval-source-map",
+    // devtool: "eval-source-map",
     module:  {
         rules: [
             {
@@ -40,7 +40,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: /(node_modules|bower_components)/,
-                use: ['style-loader', 'css-loader']
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
             }
         ]
     },

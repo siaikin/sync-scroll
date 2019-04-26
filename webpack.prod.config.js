@@ -7,10 +7,6 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: "md-sync-scroll.js"
     },
-    devServer: {
-        contentBase: './dist'
-    },
-    devtool: "eval-source-map",
     module:  {
         rules: [
             {
