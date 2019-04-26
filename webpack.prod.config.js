@@ -1,13 +1,11 @@
 const path = require('path');
-const htmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-    entry: './src/demo.js',
-    mode: "development",
+    entry: './src/index.js',
+    mode: 'production',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: "demo.js"
+        filename: "md-sync-scroll.js"
     },
     devServer: {
         contentBase: './dist'
@@ -36,18 +34,7 @@ module.exports = {
                         ]
                     }
                 }
-            },
-            {
-                test: /\.css$/,
-                exclude: /(node_modules|bower_components)/,
-                use: ['style-loader', 'css-loader']
             }
         ]
-    },
-    plugins: [
-        new htmlWebpackPlugin({
-            template: "./index.html"
-        }),
-        new ExtractTextPlugin('styles.css')
-    ]
+    }
 };

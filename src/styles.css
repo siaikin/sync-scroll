@@ -46,3 +46,7 @@ button {
     height: 100%;
     padding: 20px;
 }
+
+.testPerformance div {
+    margin: 10px;
+}

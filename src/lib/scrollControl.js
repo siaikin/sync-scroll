@@ -23,19 +23,22 @@ export class ScrollControl {
 
     /**
      * 以`syncArea`为参照，进行同步滚动。
-     * @param syncArea - 参照`Area`
+     * @param syncArea - 参照的`Area`
      */
     syncScroll(syncArea) {
-        for (let i = 0; i < this._areas.length; i++) {
+        this._curFrag = syncArea.currentFragment();
+
+        const scrollTop = syncArea.scrollTop;
+        for (let i = 0, length = this._areas.length; i < length; i++) {
             if (syncArea === this._areas[i]) { continue; }
 
-            this._areas[i].syncWith(syncArea);
+            this._areas[i].syncWith(this._curFrag, scrollTop);
         }
     }
 
     updateAreas() {
         let area;
-        for (let i = 0; i < this._areas.length; i++) {
+        for (let i = 0, length = this._areas.length; i < length; i++) {
             area = this._areas[i];
 
             area.updateFragments();

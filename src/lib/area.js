@@ -2,21 +2,21 @@ import {Fragment} from "./fragment";
 
 export class Area {
 
-    _syncScroll;
+    _syncControl;
     _el;
     _queryCriteria;
-    _fragments = [];
+    _fragmentObj;
 
     get scrollTop() {
         return this._el.scrollTop;
     }
 
     constructor(
-        syncScroll,
+        syncControl,
         el,
         queryCriteria
     ) {
-        this._syncScroll       = syncScroll;
+        this._syncControl       = syncControl;
         this._el               = el;
         this._queryCriteria    = queryCriteria;
 
@@ -24,30 +24,50 @@ export class Area {
         this._listen();
     }
 
+    /**
+     * update fragments
+     * @private
+     */
     _updateFrags() {
         if (!this._el || !this._queryCriteria) { return; }
 
+        let scrollHeight = this._el.scrollHeight;
         const els = this._el.querySelectorAll(this._queryCriteria);
-        // els.sort((a, b) => a.offsetTop - b.offsetTop);
 
-        this._fragments = [];
-        let el, frag;
-        for (let i = 0; i < els.length; i++) {
+        const length = els.length, offsetTopArr = [];
+        for (let i = 0; i < length; i++) {
+            offsetTopArr.push(els[i].offsetTop);
+        }
+
+        this._fragmentObj = {};
+        let el, frag, offsetTop;
+        for (let i = 0; i < length - 1; i++) {
             el = els[i];
+            offsetTop = offsetTopArr[i];
             frag = new Fragment(
                 i,
                 el,
-                el.offsetTop,
-                ((i + 1 < els.length) ? els[i + 1].offsetTop : this._el.scrollHeight) - el.offsetTop
+                offsetTop,
+                offsetTopArr[i + 1] - offsetTop
             );
-            this._fragments.push(frag);
+            this._fragmentObj[i] = frag;
         }
+
+        // handle last item
+        el = els[length -1];
+        frag = new Fragment(
+            length - 1,
+            el,
+            offsetTopArr[length - 1],
+            scrollHeight - offsetTopArr[length - 1]
+        );
+        this._fragmentObj[length - 1] = frag;
     }
 
     _curFrag() {
         const scrollTop = this._el.scrollTop;
 
-        const curFrag = this._fragments.reduce((previousValue, currentValue) => {
+        const curFrag = Object.values(this._fragmentObj).reduce((previousValue, currentValue) => {
             if (currentValue.offsetTop > scrollTop) { return previousValue; }
 
             if ((scrollTop - previousValue.offsetTop) > (scrollTop - currentValue.offsetTop)) {
@@ -60,30 +80,25 @@ export class Area {
         return curFrag;
     }
 
-    syncWith(area) {
-        const pairFrag = area.currentFragment();
-        const deltaHeight = area.scrollTop - pairFrag.offsetTop;
+    syncWith(pairFrag, scrollTop) {
+        const deltaHeight = scrollTop - pairFrag.offsetTop;
 
         let frag;
-        for (let i = 0; i < this._fragments.length; i++) {
-            if (this._fragments[i].pairWith(pairFrag.pairId)) {
-                frag = this._fragments[i];
-                break;
-            }
-        }
+        frag = this._fragmentObj[pairFrag.pairId];
+
         const _scrollTop = frag.offsetTop + (frag.height / pairFrag.height) * deltaHeight;
-        // console.log(_scrollTop, frag.height, (frag.height / pairFrag.height), area.scrollTop, pairFrag.offsetTop);
 
         this._el.scrollTop = _scrollTop;
     }
 
     _listen() {
         this._el.addEventListener('scroll', (ev) => {
-            if (this._syncScroll.isLocked()) {
-                this._syncScroll.unlock();
+            if (this._syncControl.isLocked()) {
+                this._syncControl.unlock();
             } else {
-                this._syncScroll.lock();
-                this._syncScroll.syncScroll(this);
+                this._syncControl.lock();
+                // 让其他`Area`以这个`Area`为标准进行同步滚动
+                this._syncControl.syncScroll(this);
             }
         });
     }

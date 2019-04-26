@@ -16,8 +16,4 @@ export class Fragment {
         this.offsetTop  = offsetTop;
         this.height     = height;
     }
-
-    pairWith(pairid) {
-        return this.pairId === pairid;
-    }
 }
