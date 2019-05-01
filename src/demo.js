@@ -8,9 +8,9 @@ hljs.registerLanguage('markdown', markdown);
 hljs.registerLanguage('xml', xml);
 
 
-import {SyncScroll} from "md-sync-scroll";
+import {SyncScroll, ConfigOptions} from "md-sync-scroll";
 
-import styles from './styles.css';
+import './styles.css';
 
 const md = new MarkdownIt({
     highlight: function (str, lang) {
@@ -27,52 +27,43 @@ const md = new MarkdownIt({
 
 const editArea = document.getElementById('edit');
 const previewArea = document.getElementById('preview');
-const syncScroll = new SyncScroll();
+const options = new ConfigOptions({
+    syncWithClick: true,
+    offsetScroll: 100
+});
+const syncScroll = new SyncScroll(options);
 
 previewArea.innerHTML = md.render(editArea.innerText);
 
 const editFrags = editArea.querySelectorAll('.h1,.h2,.h3,.h4,.h5,.h6');
 const preFrags = previewArea.querySelectorAll('h1,h2,h3,h4,h5,h6');
 
-console.log(editFrags, preFrags);
+syncScroll.addAreas([
+    {
+        area: editArea,
+        queryCriteria: '.h1,.h2,.h3,.h4,.h5,.h6'
+    },
+    {
+        area: previewArea,
+        queryCriteria: 'h1,h2,h3,h4,h5,h6'
+    }
+]);
 
-syncScroll.addArea(editArea, '.h1,.h2,.h3,.h4,.h5,.h6');
-syncScroll.addArea(previewArea, 'h1,h2,h3,h4,h5,h6');
-console.log(syncScroll);
-document.getElementById('editMarginUp').onclick = editMarginUp;
-document.getElementById('editMarginDown').onclick = editMarginDown;
-
-function editMarginUp() {
-    const lineHeight = editArea.style.lineHeight;
-    const num = Number.parseInt(lineHeight.slice(0, lineHeight.length - 2) || 21, 10);
-    editArea.style.cssText = 'line-height: ' + (num + 1) + 'px';
-    // editArea.classList.add('testPerformance');
-    syncScroll.update();
-}
-
-// function editMarginUp() {
-//     const fragment = document.createDocumentFragment();
-//     const parent = editArea.parentElement;
-//     fragment.append(editArea);
+// const scrollLine = document.getElementById('offsetSignLine');
+// const offsetScrollValue = document.getElementById('offsetScrollValue');
 //
-//     const els = fragment.querySelectorAll('div');
-//     console.log(els.length);
-//     let margin, num, style;
-//     for (let i = els.length; i--;) {
-//         style = els[i].style;
-//         margin = style.margin;
-//         num = Number.parseInt(margin.slice(0, margin.length - 2) || '0', 10);
-//         style.margin =  ++num + 'px';
-//     }
-//     parent.insertBefore(fragment, previewArea);
-//     syncScroll.update();
+// document.getElementById('offsetScrollUp').onclick = offsetScrollUp;
+// document.getElementById('offsetScrollDown').onclick = offsetScrollDown;
+//
+// function offsetScrollUp() {
+//     options.offsetScroll += 10;
+//     scrollLine.style.top = options.offsetScroll + 'px';
+//     offsetScrollValue.value = options.offsetScroll;
 // }
-
-
-function editMarginDown() {
-    const lineHeight = editArea.style.lineHeight;
-    const num = Number.parseInt(lineHeight.slice(0, lineHeight.length - 2) || 21, 10);
-    editArea.style.cssText = 'line-height: ' + (num - 1) + 'px';
-
-    syncScroll.update();
-}
+//
+// function offsetScrollDown() {
+//     if (options.offsetScroll <= 0) { return; }
+//     options.offsetScroll -= 10;
+//     scrollLine.style.top = options.offsetScroll + 'px';
+//     offsetScrollValue.value = options.offsetScroll;
+// }

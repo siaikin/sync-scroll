@@ -1,7 +1,7 @@
 export class Fragment {
 
     pairId;
-    _el;
+    el;
     offsetTop;
     height;
 
@@ -12,7 +12,7 @@ export class Fragment {
         height
     ) {
         this.pairId     = pairId;
-        this._el       = el;
+        this.el         = el;
         this.offsetTop  = offsetTop;
         this.height     = height;
     }

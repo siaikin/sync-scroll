@@ -5,16 +5,29 @@ export class SyncScroll {
     controller;
     areas;
 
-    constructor() {
-        this.controller = new ScrollControl();
+    constructor(
+        options
+    ) {
+        this.controller = new ScrollControl(options);
         this.areas = this.controller._areas;
     }
 
-    addArea(el, queryCriteria) {
-        this.controller.addArea(el, queryCriteria);
+    addAreas(areasInfo) {
+        for (let i = areasInfo.length; i--;) {
+            this.addArea(areasInfo[i]);
+        }
+        this.update();
+    }
+
+    addArea(areaInfo) {
+        this.controller.addArea(areaInfo.area, areaInfo.queryCriteria, areaInfo.options);
     }
 
     update() {
         this.controller.updateAreas();
+    }
+
+    destory() {
+        this.controller.destroyAreas();
     }
 }
