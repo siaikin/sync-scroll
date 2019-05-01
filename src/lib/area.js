@@ -2,14 +2,36 @@ import {Fragment} from "./fragment";
 
 export class Area {
 
+    /**
+     * control类的引用
+     */
     _syncControl;
+    /**
+     * Dom对象
+     */
     _el;
+    /**
+     * 查询语句
+     */
     _queryCriteria;
     _options;
     _fragMap;
     _frags;
+    /**
+     * 当前对齐的`Fragment`
+     */
     _curFrag;
+    /**
+     * 对齐偏移参数
+     */
     _ofstOps;
+
+    get scrollTop() {
+        return this._el.scrollTop;
+    }
+    set scrollTop(scrollTop) {
+        this._el.scrollTop = scrollTop;
+    }
 
     currentFragment() {
         return this._curFrag;
@@ -32,18 +54,18 @@ export class Area {
         };
         this._listen();
 
-        if (!Area.prototype.hasOwnProperty('scrollTop')) {
-            Object.defineProperty(Area.prototype, 'scrollTop', {
-                get() {
-                    return this._el.scrollTop;
-                },
-                set(scrollTop) {
-                    this._el.scrollTop = scrollTop;
-                },
-                configurable: true,
-                enumerable: true
-            })
-        }
+        // if (!Area.prototype.hasOwnProperty('scrollTop')) {
+        //     Object.defineProperty(Area.prototype, 'scrollTop', {
+        //         get() {
+        //             return this._el.scrollTop;
+        //         },
+        //         set(scrollTop) {
+        //             this._el.scrollTop = scrollTop;
+        //         },
+        //         configurable: true,
+        //         enumerable: true
+        //     })
+        // }
     }
 
     /**
@@ -157,13 +179,14 @@ export class Area {
     }
 
     syncWith(pairFrag, scrollTop, ofstOps) {
-        console.log(pairFrag, scrollTop, ofstOps);
         const deltaHeight = scrollTop - pairFrag.offsetTop + ofstOps.ofstScl;
 
-        let frag = this._fragMap[pairFrag.pairId], ratio = frag.height / pairFrag.height;
+        let frag = this._fragMap[pairFrag.pairId],
+            ratio = frag.height / pairFrag.height;
 
-        const _scrollTop = frag.offsetTop + ratio * deltaHeight + (ratio * ofstOps.ofstFrag - ofstOps.ofstFrag);
-        console.log(ratio * ofstOps.ofstFrag - ofstOps.ofstFrag);
+        const _scrollTop = frag.offsetTop   +
+            ratio * deltaHeight             +
+            (ratio * ofstOps.ofstFrag - ofstOps.ofstFrag);
 
         this.scrollTop = _scrollTop - ofstOps.ofstScl;
     }
@@ -172,7 +195,7 @@ export class Area {
         this._updateFrags();
     }
 
-    destoryArea() {
+    destory() {
         this._rmListen();
     }
 }

@@ -1,4 +1,5 @@
 import {ScrollControl} from "./scrollControl";
+import {ConfigOptions} from "./configOptions";
 
 export class SyncScroll {
 
@@ -6,7 +7,7 @@ export class SyncScroll {
     areas;
 
     constructor(
-        options
+        options = ConfigOptions.DEFAULT_OPTIONS
     ) {
         this.controller = new ScrollControl(options);
         this.areas = this.controller._areas;

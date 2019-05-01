@@ -1,10 +1,27 @@
 import {Area} from "./area";
 
+/**
+ * control类，用于内部对`Area`统一管理
+ */
 export class ScrollControl {
 
+    /**
+     * 信号量，避免滚动事件死循环
+     * @type {number}
+     * @private
+     */
     _sign = 1;
+    /**
+     * 当前对齐的`Fragment`
+     */
     _curFrag;
+    /**
+     * `Area`集合
+     */
     _areas;
+    /**
+     * 全局配置
+     */
     _options;
 
     constructor(options) {
@@ -51,7 +68,7 @@ export class ScrollControl {
 
     destroyAreas() {
         this._areas.forEach(function (area) {
-            area.destoryArea();
+            area.destory();
         })
     }
 

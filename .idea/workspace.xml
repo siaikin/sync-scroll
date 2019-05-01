@@ -2,23 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d547dba-0b86-4963-b58d-58c525ae6781" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/lib/configOptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/demo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/md-sync-scroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/md-sync-scroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/dist/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/demo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/area.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/area.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/fragment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/fragment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/configOptions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/configOptions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/scrollControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/scrollControl.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib/syncScroll.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/syncScroll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/template.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,8 +27,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/demo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+            <state relative-caret-position="187">
+              <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
                 <element signature="e#374#431#0" expanded="true" />
@@ -45,39 +38,47 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/scrollControl.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="38" column="60" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="60" />
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="17">
+                <caret line="1" selection-start-line="1" selection-end-line="8" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+        <entry file="file://$PROJECT_DIR$/src/lib/configOptions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lib/area.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="424">
+              <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lib/area.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="164" column="65" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/template.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="309" column="67" selection-start-line="309" selection-start-column="67" selection-end-line="309" selection-end-column="67" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#2824#2828#0" expanded="true" />
+                <element signature="e#2830#2834#0" expanded="true" />
+                <element signature="e#2835#2839#0" expanded="true" />
+                <element signature="e#2841#2845#0" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,26 +87,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lib/syncScroll.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/styles.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lib/fragment.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+            <state>
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,6 +127,7 @@
       <find>_fragmentMap</find>
       <find>scrollTop</find>
       <find>conso</find>
+      <find>scrollHeight</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -161,26 +147,26 @@
         <option value="$PROJECT_DIR$/demo.js" />
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test.css" />
         <option value="$PROJECT_DIR$/webpack.production.config.js" />
         <option value="$PROJECT_DIR$/webpack.prod.config.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/node_modules/markdown-it/dist/markdown-it.min.js" />
         <option value="$PROJECT_DIR$/dist/md-sync-scroll.js" />
-        <option value="$PROJECT_DIR$/webpack.config.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/src/lib/fragment.js" />
         <option value="$PROJECT_DIR$/src/lib/options.js" />
         <option value="$PROJECT_DIR$/src/lib/config.js" />
-        <option value="$PROJECT_DIR$/src/lib/configOptions.js" />
-        <option value="$PROJECT_DIR$/src/lib/syncScroll.js" />
         <option value="$PROJECT_DIR$/src/styles.css" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/lib/scrollControl.js" />
-        <option value="$PROJECT_DIR$/template.html" />
+        <option value="$PROJECT_DIR$/webpack.config.js" />
+        <option value="$PROJECT_DIR$/src/lib/syncScroll.js" />
+        <option value="$PROJECT_DIR$/src/lib/configOptions.js" />
         <option value="$PROJECT_DIR$/src/demo.js" />
+        <option value="$PROJECT_DIR$/src/lib/scrollControl.js" />
         <option value="$PROJECT_DIR$/src/lib/area.js" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/template.html" />
       </list>
     </option>
   </component>
@@ -299,12 +285,12 @@
       <workItem from="1556284088405" duration="39493000" />
       <workItem from="1556514435156" duration="323000" />
       <workItem from="1556527735815" duration="1987000" />
-      <workItem from="1556541238231" duration="25858000" />
+      <workItem from="1556541238231" duration="38560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173539000" />
+    <option name="totallyTimeSpent" value="186241000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -319,7 +305,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13382508" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13382508" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -331,7 +317,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924107" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32924107" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24776785" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.24776785" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -353,16 +339,6 @@
     <entry file="file://$PROJECT_DIR$/dist/lib/area.js" />
     <entry file="file://$PROJECT_DIR$/dist/index.js" />
     <entry file="file://$PROJECT_DIR$/dist/bundle.js" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="682">
-            <caret line="70" selection-start-line="70" selection-end-line="70" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/html-webpack-plugin/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -433,23 +409,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/md-sync-scroll.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/webpack.prod.config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/demo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -483,24 +446,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/configOptions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/fragment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/demo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="88" column="22" lean-forward="true" selection-start-line="88" selection-start-column="22" selection-end-line="88" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/md-sync-scroll.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lib/scrollControl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="577">
+          <caret line="70" column="24" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -513,25 +496,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/syncScroll.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="309" column="67" selection-start-line="309" selection-start-column="67" selection-end-line="309" selection-end-column="67" />
+        <state>
           <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/demo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="3" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="32" selection-end-column="3" />
+        <state relative-caret-position="187">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
             <element signature="e#374#431#0" expanded="true" />
@@ -539,24 +514,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="17">
+            <caret line="1" selection-start-line="1" selection-end-line="8" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lib/scrollControl.js">
+    <entry file="file://$PROJECT_DIR$/src/lib/configOptions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="38" column="60" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="60" />
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lib/area.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="424">
-          <caret line="164" column="65" selection-start-line="164" selection-start-column="65" selection-end-line="164" selection-end-column="65" />
+          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret lean-forward="true" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#2824#2828#0" expanded="true" />
+            <element signature="e#2830#2834#0" expanded="true" />
+            <element signature="e#2835#2839#0" expanded="true" />
+            <element signature="e#2841#2845#0" expanded="true" />
+            <element signature="n#style#0;n#hr#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

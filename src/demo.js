@@ -27,12 +27,11 @@ const md = new MarkdownIt({
 
 const editArea = document.getElementById('edit');
 const previewArea = document.getElementById('preview');
-const options = new ConfigOptions({
+const options = ConfigOptions.instance({
     syncWithClick: true,
     offsetScroll: 100
 });
 const syncScroll = new SyncScroll(options);
-
 previewArea.innerHTML = md.render(editArea.innerText);
 
 const editFrags = editArea.querySelectorAll('.h1,.h2,.h3,.h4,.h5,.h6');
@@ -48,22 +47,12 @@ syncScroll.addAreas([
         queryCriteria: 'h1,h2,h3,h4,h5,h6'
     }
 ]);
-
-// const scrollLine = document.getElementById('offsetSignLine');
-// const offsetScrollValue = document.getElementById('offsetScrollValue');
-//
-// document.getElementById('offsetScrollUp').onclick = offsetScrollUp;
-// document.getElementById('offsetScrollDown').onclick = offsetScrollDown;
-//
-// function offsetScrollUp() {
-//     options.offsetScroll += 10;
-//     scrollLine.style.top = options.offsetScroll + 'px';
-//     offsetScrollValue.value = options.offsetScroll;
-// }
-//
-// function offsetScrollDown() {
-//     if (options.offsetScroll <= 0) { return; }
-//     options.offsetScroll -= 10;
-//     scrollLine.style.top = options.offsetScroll + 'px';
-//     offsetScrollValue.value = options.offsetScroll;
-// }
+// syncScroll.addArea({
+//     area: editArea,
+//     queryCriteria: '.h1,.h2,.h3,.h4,.h5,.h6'
+// });
+// syncScroll.addArea({
+//     area: previewArea,
+//     queryCriteria: 'h1,h2,h3,h4,h5,h6'
+// });
+// syncScroll.update();
