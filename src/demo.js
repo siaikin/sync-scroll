@@ -27,6 +27,15 @@ const md = new MarkdownIt({
 
 const editArea = document.getElementById('edit');
 const previewArea = document.getElementById('preview');
+
+// const appendHTMLs = [];
+// console.time();
+// for (let i = 0; i < 1000; i++) {
+//     appendHTMLs.push(`<div class="h2">## 性能测试 ${i}</div><div><br></div><div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div><div><br></div>`);
+// }
+// console.timeEnd();
+// editArea.innerHTML += appendHTMLs.join('');
+
 const options = ConfigOptions.instance({
     syncWithClick: true,
     offsetScroll: 100

@@ -111,20 +111,36 @@ export class Area {
         this._frags.push(frag);
     }
 
+    /**
+     * 通过给定的偏移量确定`片段`位置
+     * @param offset
+     * @private
+     */
+    _locateByOffset(offset) {
+        let curFrag, frags = this._frags;
+
+        for (let start = 0, end = frags.length - 1, mid; start < end - 1;) {
+            mid = (start + end) >> 1;
+            if (offset >= frags[mid].offsetTop) {
+                if (frags[mid + 1].offsetTop > offset) {
+                    curFrag = frags[mid];
+                    break;
+                } else {
+                    start = mid;
+                }
+            } else if (frags[mid - 1].offsetTop <= offset) {
+                curFrag = frags[mid - 1];
+                break;
+            } else {
+                end = mid;
+            }
+        }
+        return curFrag ? curFrag : frags[frags.length - 1];
+    }
+
     _topFrag(ofstOps) {
         const scrollTop = this.scrollTop + ofstOps.ofstScl;
-
-        const curFrag = Object.values(this._fragMap).reduce((previousValue, currentValue) => {
-            if (currentValue.offsetTop > scrollTop) { return previousValue; }
-
-            if ((scrollTop - previousValue.offsetTop) > (scrollTop - currentValue.offsetTop)) {
-                return currentValue;
-            } else {
-                return previousValue;
-            }
-        });
-
-        return curFrag;
+        return this._locateByOffset(scrollTop);
     }
 
     _listen() {
@@ -148,20 +164,13 @@ export class Area {
             this._syncControl.unlock();
         } else {
             this._syncControl.lock();
-            const target = event.target;
-            let frag, tOsTop = target.offsetTop;
-            for (let i = 0, length = this._frags.length; i < length; i++) {
-                frag = this._frags[i];
-                if (tOsTop < frag.offsetTop + frag.height) {
-                    break;
-                }
-            }
+            let tOsTop = event.target.offsetTop;
+            this._curFrag = this._locateByOffset(tOsTop);
 
-            this._curFrag = frag;
             // 让其他`Area`以这个`Area`为标准进行同步滚动
             this._syncControl.syncScroll(this, {
-                ofstScl: frag.offsetTop - this.scrollTop,
-                ofstFrag: tOsTop - frag.offsetTop
+                ofstScl: this._curFrag.offsetTop - this.scrollTop,
+                ofstFrag: tOsTop - this._curFrag.offsetTop
             });
         }
     }

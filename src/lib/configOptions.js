@@ -16,4 +16,7 @@ export class ConfigOptions {
     static instance(options) {
         return options ? new ConfigOptions(options) : ConfigOptions.DEFAULT_OPTIONS;
     }
+
+    hello() {
+    }
 }
