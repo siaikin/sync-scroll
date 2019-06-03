@@ -10,18 +10,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abc1310054026/sync-scroll.git"
+    "url": "git+https://github.com/siaikin/sync-scroll.git"
   },
   "keywords": [
     "markdown",
     "async scroll"
   ],
-  "author": "abc1310054026",
+  "author": "siaikin",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/abc1310054026/sync-scroll/issues"
+    "url": "https://github.com/siaikin/sync-scroll/issues"
   },
-  "homepage": "https://github.com/abc1310054026/sync-scroll#readme",
+  "homepage": "https://github.com/siaikin/sync-scroll#readme",
   "files": [
     "dist/md-sync-scroll.js",
     "src/lib",
