@@ -8,7 +8,7 @@ hljs.registerLanguage('markdown', markdown);
 hljs.registerLanguage('xml', xml);
 
 
-import {SyncScroll, ConfigOptions} from "md-sync-scroll";
+import {SyncScroll, ConfigOptions} from "./index.js";
 
 import './styles.css';
 
