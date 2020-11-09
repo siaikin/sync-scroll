@@ -37,6 +37,7 @@ button {
 .content {
     position: relative;
     flex: 1 1 auto;
+    white-space: pre;
 }
 .area {
     position: relative;

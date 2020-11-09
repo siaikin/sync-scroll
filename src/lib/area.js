@@ -32,6 +32,12 @@ export class Area {
     set scrollTop(scrollTop) {
         this._el.scrollTop = scrollTop;
     }
+    get scrollLeft() {
+        return this._el.scrollLeft;
+    }
+    set scrollLeft(scrollLeft) {
+        this._el.scrollLeft = scrollLeft;
+    }
 
     currentFragment() {
         return this._curFrag;
@@ -187,7 +193,7 @@ export class Area {
         }
     }
 
-    syncWith(pairFrag, scrollTop, ofstOps) {
+    syncWith(pairFrag, scrollTop, scrollLeft, ofstOps) {
         const deltaHeight = scrollTop - pairFrag.offsetTop + ofstOps.ofstScl;
 
         let frag = this._fragMap[pairFrag.pairId],
@@ -198,13 +204,14 @@ export class Area {
             (ratio * ofstOps.ofstFrag - ofstOps.ofstFrag);
 
         this.scrollTop = _scrollTop - ofstOps.ofstScl;
+        this.scrollLeft = scrollLeft;
     }
 
     updateFragments() {
         this._updateFrags();
     }
 
-    destory() {
+    destroy() {
         this._rmListen();
     }
 }

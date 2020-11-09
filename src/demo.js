@@ -27,14 +27,8 @@ const md = new MarkdownIt({
 
 const editArea = document.getElementById('edit');
 const previewArea = document.getElementById('preview');
-
-// const appendHTMLs = [];
-// console.time();
-// for (let i = 0; i < 1000; i++) {
-//     appendHTMLs.push(`<div class="h2">## 性能测试 ${i}</div><div><br></div><div>当我们滚动鼠标滚轮时，他们会基于**片断**进行等比例滚动</div><div><br></div>`);
-// }
-// console.timeEnd();
-// editArea.innerHTML += appendHTMLs.join('');
+const editArea2 = document.getElementById('edit2');
+const previewArea2 = document.getElementById('preview2');
 
 const options = ConfigOptions.instance({
     syncWithClick: true,
@@ -42,9 +36,7 @@ const options = ConfigOptions.instance({
 });
 const syncScroll = new SyncScroll(options);
 previewArea.innerHTML = md.render(editArea.innerText);
-
-const editFrags = editArea.querySelectorAll('.h1,.h2,.h3,.h4,.h5,.h6');
-const preFrags = previewArea.querySelectorAll('h1,h2,h3,h4,h5,h6');
+previewArea2.innerHTML = md.render(editArea2.innerText);
 
 syncScroll.addAreas([
     {
@@ -54,14 +46,13 @@ syncScroll.addAreas([
     {
         area: previewArea,
         queryCriteria: 'h1,h2,h3,h4,h5,h6'
+    },
+    {
+        area: editArea2,
+        queryCriteria: '.h1,.h2,.h3,.h4,.h5,.h6'
+    },
+    {
+        area: previewArea2,
+        queryCriteria: 'h1,h2,h3,h4,h5,h6'
     }
 ]);
-// syncScroll.addArea({
-//     area: editArea,
-//     queryCriteria: '.h1,.h2,.h3,.h4,.h5,.h6'
-// });
-// syncScroll.addArea({
-//     area: previewArea,
-//     queryCriteria: 'h1,h2,h3,h4,h5,h6'
-// });
-// syncScroll.update();

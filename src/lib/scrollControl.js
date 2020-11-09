@@ -49,11 +49,11 @@ export class ScrollControl {
     syncScroll(syncArea, offsetOptions) {
         this._curFrag = syncArea.currentFragment();
 
-        const scrollTop = syncArea.scrollTop;
+        const scrollTop = syncArea.scrollTop, scrollLeft = syncArea.scrollLeft;
         for (let i = 0, length = this._areas.length; i < length; i++) {
             if (syncArea === this._areas[i]) { continue; }
 
-            this._areas[i].syncWith(this._curFrag, scrollTop, offsetOptions);
+            this._areas[i].syncWith(this._curFrag, scrollTop ,scrollLeft, offsetOptions);
         }
     }
 
