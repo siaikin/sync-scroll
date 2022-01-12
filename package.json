@@ -47,6 +47,6 @@
     "core-js": "^3.0.1",
     "github-markdown-css": "^3.0.1",
     "highlight.js": "^9.15.6",
-    "markdown-it": "^8.4.2"
+    "markdown-it": "^12.3.2"
   }
 }
